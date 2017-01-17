@@ -1,4 +1,6 @@
-export default Header = props => {
+import React from 'react';
+
+export default (props) => {
   return (
     <header>
       <span id='logo'>Color Palette</span>

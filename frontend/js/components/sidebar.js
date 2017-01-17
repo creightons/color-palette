@@ -1,6 +1,7 @@
+import React from 'react';
 import ColorPicker from './color-picker';
 
-export default Sidebar = props => {
+export default (props) => {
   return (
     <aside id='sidebar'>
       <input id='title' />

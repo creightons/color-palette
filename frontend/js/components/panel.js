@@ -1,4 +1,6 @@
-export default Panel = props => {
+import React from 'react';
+
+export default (props) => {
   let classes = ['color-panel'];
               
   if (props.selected) {

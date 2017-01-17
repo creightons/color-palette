@@ -1,7 +1,7 @@
-let express = require('express'),
+var express = require('express'),
 	config = require('./config');
 	
-let app = express();
+var app = express();
 
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
@@ -11,7 +11,7 @@ app.use('/public', express.static(
 ));
 
 app.use((req, res, next) => {
-	let fullUrl = req.method + ' ' + req.protocol + '://' + req.get('host') + req.originalUrl;
+	var fullUrl = req.method + ' ' + req.protocol + '://' + req.get('host') + req.originalUrl;
 	console.log(fullUrl);
 	next();
 });

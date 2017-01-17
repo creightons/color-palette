@@ -1,6 +1,7 @@
+import React from 'react';
 import Panel from './panel';
 
-export default MainPalette = props => {
+export default (props) => {
   return (
     <div id='palette-container'>
       <div id='palette'>
