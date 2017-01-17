@@ -50,7 +50,7 @@ gulp.task('watchjs', function() {
 	var bundler = watchify(
 		browserify(
 			{
-				entries: 'frontend/main.js',
+				entries: 'frontend/js/main.js',
 				debug: true,
 			},
 			watchify.args
