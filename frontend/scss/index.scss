@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+/******** Colors ********/
+$primary: red;
+$text: white;
+$primary-hover: blue;
+$sidebar-primary: blue;
+$backdrop: lightgray;
+$button-primary: green;
+
+/******* Constants *******/
+$header-height: 60px;
+$sidebar-width: 250px;
+
+header {
+  background-color: $primary;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#logo {
+  font-size: 30px;
+  color: $text;
+  line-height: $header-height;
+  padding-left: 10px;
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  
+  li {
+    line-height: $header-height;
+    width: 80px;
+    font-size: 16px;
+    text-align: center;
+    color: $text;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+}
+
+#main-display {
+  display: flex;
+}
+
+#palette-container {
+  background-color: $backdrop;
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: $sidebar-width;
+  bottom: 0;
+}
+
+#palette {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: black;  
+  display: flex;
+  flex-direction: row;
+}
+
+.color-panel {
+  flex: 1;
+  height: 300px;
+  background-color: white;
+  border: none;
+  position: relative;
+  &.selected .marker{
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#sidebar {
+  background-color: $sidebar-primary;
+  position: fixed;
+  top: $header-height;
+  left: calc(100% -  #{$sidebar-width} );
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+}
+
+#title {
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.button {
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 15px;
+}
+
+#add {
+  width: 100%;
+  color: $text;
+  background-color: $button-primary;
+}
+
+#remove {
+  width: 100%;
+  color: $text;
+  background-color: $button-primary;
+}
