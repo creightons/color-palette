@@ -1,6 +1,6 @@
-
 import MainPalette from '../components/main-palette';
 import { connect } from 'react-redux';
+import { setCurrentIndex } from '../actions';
 
 const mapStateToProps = (state) => {
 	return {
@@ -10,7 +10,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-	return {};
+	return {
+            setCurrentIndex: (index) => {
+                dispatch( setCurrentIndex(index) );
+            },
+        };
 }
 let MainPaletteContainer = connect(
 	mapStateToProps,

@@ -7,9 +7,11 @@ const MainPalette = (props) => {
       <div id='palette'>
         {props.colors.map((color, index) => {
           return <Panel
-						key={index}
+            key={index}
+            index={index}
             color={color}
             selected={index === props.currentIndex}
+            setCurrentIndex={props.setCurrentIndex}
           />;
         })}
       </div>
