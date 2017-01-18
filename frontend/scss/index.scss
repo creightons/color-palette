@@ -100,28 +100,22 @@ header {
   padding: 10px;
 }
 
+$sidebar-bottom-margin: 20px;
+
 #title {
   border: none;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: $sidebar-bottom-margin;
   line-height: 30px;
   padding-left: 10px;
 }
 
 .button {
-  margin-bottom: 10px;
+  margin-bottom: $sidebar-bottom-margin;
   text-align: center;
   padding: 15px;
-}
-
-#add {
   width: 100%;
   color: $text;
   background-color: $button-primary;
-}
-
-#remove {
-  width: 100%;
-  color: $text;
-  background-color: $button-primary;
+  cursor: pointer;
 }
