@@ -3,14 +3,16 @@ let initialPaletteState = {
   currentIndex: 0,
 };
 
-let mainPalette = (
-  state = initialPaletteState,
-  action
-) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
+let mainPalette = (state = initialPaletteState, action) => {
+	switch (action.type) {
+		case 'ADD_COLOR':
+			let newState = Object.assign({}, state);
+			newState.colors.push(action.color);
+			return newState;
+			
+		default:
+			return state;
+	}
 };
 
 export default mainPalette;

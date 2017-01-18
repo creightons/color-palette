@@ -1,13 +1,12 @@
 import React from 'react';
 import MainPaletteContainer from '../containers/main-palette-container';
-import Sidebar from './sidebar';
+import SidebarContainer from '../containers/sidebar-container';
 
 export default (props) => {
   return (
     <main id='main-display'>
-      
       <MainPaletteContainer />
-      <Sidebar />
+      <SidebarContainer />
     </main>
   );
 };

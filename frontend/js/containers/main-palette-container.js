@@ -1,14 +1,17 @@
+
 import MainPalette from '../components/main-palette';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-	return state.mainPalette;
-}
+const mapStateToProps = (state) => {
+	return {
+		colors: state.mainPalette.colors,
+		currentIndex: state.mainPalette.currentIndex,
+	};
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
 	return {};
 }
-
 let MainPaletteContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps

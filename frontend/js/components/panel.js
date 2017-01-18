@@ -11,6 +11,7 @@ export default (props) => {
     backgroundColor: props.color,
   };
   
+  
   return (
     <div className={classes.join(' ')} >
       <div className='marker' style={styles} />
