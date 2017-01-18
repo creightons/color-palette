@@ -6,10 +6,22 @@ let initialPaletteState = {
 let mainPalette = (state = initialPaletteState, action) => {
 	switch (action.type) {
 		case 'ADD_COLOR':
-			let newState = Object.assign({}, state);
-			newState.colors.push(action.color);
-			return newState;
-			
+			return Object.assign({}, state, {
+				colors: [ ...state.colors, action.color ]
+			});
+
+		case 'REMOVE_COLOR':
+			let shortenedColorArray = Object.assign([], state.colors);
+
+			// Remove the element at the end of the array
+			shortenedColorArray = shortenedColorArray.splice(
+				0, shortenedColorArray.length - 1
+			);
+
+			return Object.assign({}, state, {
+					colors: shortenedColorArray,
+			});
+
 		default:
 			return state;
 	}

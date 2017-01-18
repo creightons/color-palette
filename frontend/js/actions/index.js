@@ -8,3 +8,9 @@ export function addColor() {
 		color: getRandomColor(),
 	}
 };
+
+export function removeColor() {
+	return {
+		type: 'REMOVE_COLOR',
+	};
+};

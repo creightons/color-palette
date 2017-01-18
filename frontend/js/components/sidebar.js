@@ -6,7 +6,7 @@ export default (props) => {
     <aside id='sidebar'>
       <input id='title' />
       <div id='add' className='button' onClick={props.addColor}>Add Color</div>
-      <div id='remove' className='button'>Remove Color</div>
+      <div id='remove' className='button' onClick={props.removeColor}>Remove Color</div>
 	  <ColorPicker />
     </aside>
   )

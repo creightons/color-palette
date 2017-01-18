@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addColor } from '../actions';
+import { addColor, removeColor } from '../actions';
 import Sidebar from '../components/sidebar';
 
 const mapStateToProps = (state) => {
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		addColor: () => { dispatch( addColor() ); },
+		removeColor: () => { dispatch( removeColor() ); },
 	};
 }
 
