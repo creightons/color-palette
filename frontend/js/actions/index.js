@@ -1,6 +1,4 @@
-function getRandomColor() {
-    return '#' + Math.floor(Math.random()*16777215).toString(16);
-}
+import { getRandomColor } from '../utils';
 
 export function addColor(color) {
     return {
@@ -33,5 +31,11 @@ export function updateActiveColor(color) {
     return {
         type: 'UPDATE_ACTIVE_COLOR',
         color,
+    };
+};
+
+export function updateColor() {
+    return {
+        type: 'UPDATE_COLOR_FOR_ACTIVE_INDEX',
     };
 };

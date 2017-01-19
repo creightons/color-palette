@@ -4,6 +4,7 @@ import {
     addRandomColor,
     removeColor,
     updateActiveColor,
+    updateColor,
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
@@ -21,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
         updateActiveColor: (color) => {
             dispatch( updateActiveColor(color) );
         },
+	updateColor: () => { dispatch( updateColor() ); },
     };
 }
 

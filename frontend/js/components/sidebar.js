@@ -15,6 +15,9 @@ export default (props) => {
     const handleAddRandom = () => {
         props.addRandomColor();
     };
+    const handleUpdateColor = () => {
+	props.updateColor();
+    };
 
     return (
         <aside id='sidebar'>
@@ -32,16 +35,25 @@ export default (props) => {
             Add Random Color
         </div>
         <div
-            id='remove'
             className='button'
             onClick={handleRemove}
         >
             Remove Color
         </div>
-        <ColorPicker
-            activeColor={props.activeColor}
-            updateActiveColor={props.updateActiveColor}
-        />
+
+	<div id='color-picker'>
+		<ColorPicker
+		    activeColor={props.activeColor}
+		    updateActiveColor={props.updateActiveColor}
+		/>
+	</div>
+	<div
+		className='button'
+		onClick={ handleUpdateColor }
+	>
+		Update Selected Color
+	</div>
+
         </aside>
     );
 };

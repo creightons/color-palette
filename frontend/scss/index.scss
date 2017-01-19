@@ -5,10 +5,11 @@
 }
 
 /******** Colors ********/
+$background: lightgray;
 $primary: red;
 $text: white;
 $primary-hover: blue;
-$sidebar-primary: blue;
+$sidebar-primary: white;
 $backdrop: lightgray;
 $button-primary: green;
 
@@ -108,6 +109,11 @@ $sidebar-bottom-margin: 20px;
   margin-bottom: $sidebar-bottom-margin;
   line-height: 30px;
   padding-left: 10px;
+  background-color: $background;
+}
+
+#color-picker {
+  margin-bottom: $sidebar-bottom-margin;
 }
 
 .button {
