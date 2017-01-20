@@ -45,7 +45,10 @@ export default class TitleBox extends React.Component {
 		}
 
 		return (
-			component
+                    <div>
+                        <div className='palette-name'>name</div>
+			{component}
+                    </div>
 		);
 	};
 };

@@ -3,7 +3,7 @@ import React from 'react';
 export default (props) => {
   return (
     <header>
-      <span id='logo'>Color Palette</span>
+      <div id='logo'>Color Palette</div>
       <ul id='options'>
         <li>New</li>
         <li>Save</li>

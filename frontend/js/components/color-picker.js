@@ -29,6 +29,7 @@ export default class ColorPicker extends React.Component {
       <ChromePicker
         color={this.state.color}
         onChangeComplete={this.handleChangeComplete}
+        width='300px'
       />
     );
   };

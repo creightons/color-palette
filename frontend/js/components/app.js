@@ -1,7 +1,6 @@
 import React from 'react';
 import Display from './display';
-import SavedScreen from './saved-screen';
-import Header from './header';
+import SidebarContainer from '../containers/sidebar-container';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,18 +8,10 @@ export default class App extends React.Component {
   };
   
   render() {
-    let content;
-    
-    if (true) {
-      content = <Display />;
-    } else {
-      content = <SavedScreen />;
-    }
-    
     return (
       <div>
-        <Header />
-        {content}
+        <Display />
+        <SidebarContainer />
       </div>
     );
   }
