@@ -1,5 +1,6 @@
 import React from 'react';
 import ColorPicker from './color-picker';
+import TitleBox from './title-box';
 
 export default (props) => {
     const handleAdd = () => {
@@ -21,39 +22,38 @@ export default (props) => {
 
     return (
         <aside id='sidebar'>
-        <input id='title' />
-        <div
-            className='button'
-            onClick={handleAdd}
-        >
-            Add Color
-        </div>
-        <div
-            className='button'
-            onClick={handleAddRandom}
-        >
-            Add Random Color
-        </div>
-        <div
-            className='button'
-            onClick={handleRemove}
-        >
-            Remove Color
-        </div>
+		<TitleBox />
+		<div
+		    className='button'
+		    onClick={handleAdd}
+		>
+		    Add Color
+		</div>
+		<div
+		    className='button'
+		    onClick={handleAddRandom}
+		>
+		    Add Random Color
+		</div>
+		<div
+		    className='button'
+		    onClick={handleRemove}
+		>
+		    Remove Color
+		</div>
 
-	<div id='color-picker'>
-		<ColorPicker
-		    activeColor={props.activeColor}
-		    updateActiveColor={props.updateActiveColor}
-		/>
-	</div>
-	<div
-		className='button'
-		onClick={ handleUpdateColor }
-	>
-		Update Selected Color
-	</div>
-
+		<div id='color-picker'>
+			<ColorPicker
+			    activeColor={props.activeColor}
+			    updateActiveColor={props.updateActiveColor}
+			/>
+		</div>
+		<div
+			className='button'
+			onClick={ handleUpdateColor }
+		>
+			Update Selected Color
+		</div>
         </aside>
     );
 };
