@@ -5,13 +5,15 @@
 }
 
 /******** Colors ********/
-$background: lightgray;
-$primary: red;
+$background: #ffcccc;
+$primary: #ff0000;
+$primary-hover: #ff7f7f;
 $text: white;
-$primary-hover: blue;
+$text-emphasis: #e60000;
 $sidebar-primary: white;
 $backdrop: lightgray;
-$button-primary: green;
+$button-primary: #ff4d4d;
+$button-bottom: #b30000;
 $palette-background: white;
 
 /******* Constants *******/
@@ -117,6 +119,8 @@ $sidebar-bottom-margin: 20px;
 .palette-name {
     font-size: 12px;
     margin-bottom: 3px;
+    color: $text-emphasis;
+    font-weight: 600;
 }
 
 .title {
@@ -127,18 +131,38 @@ $sidebar-bottom-margin: 20px;
   line-height: 30px;
   padding-left: 10px;
   background-color: $background;
+  color: $text-emphasis;
+  font-weight: 500;
+  font-size: 16px;
+  overflow: hidden;
+
+}
+input.title:focus {
+  outline: none;
 }
 
 #color-picker {
   margin-bottom: $sidebar-bottom-margin;
 }
 
+.controls {
+	display: flex;
+	justify-content: space-between;
+}
+
 .button {
   margin-bottom: $sidebar-bottom-margin;
   text-align: center;
-  padding: 15px;
-  width: 100%;
+  line-height: 40px;
+  font-size: 16px;
+  flex: 1;
   color: $text;
   background-color: $button-primary;
   cursor: pointer;
+  box-shadow: 0 3px 0 0 $button-bottom;
+  &:first-child { margin-right: 10px; }
+  &:last-child { margin-left: 10px; }
+  &:hover {
+    background-color: $primary-hover;
+  }
 }

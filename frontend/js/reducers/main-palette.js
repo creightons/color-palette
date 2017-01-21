@@ -6,23 +6,15 @@ let initialPaletteState = {
   colors: [initialColor],
   currentIndex: 0,
   activeColor: initialColor,
+  activeTitle: '',
 };
 
 let newIndex;
 
 let mainPalette = (state = initialPaletteState, action) => {
     switch (action.type) {
-        case 'ADD_COLOR':
 
-	    newIndex = state.colors.length === 0 ? 0 : state.currentIndex;
-
-	    return Object.assign({}, state, {
-                colors: [ ...state.colors, action.color ],
-		currentIndex: newIndex,
-            });
-
-        case 'ADD_RANDOM_COLOR':
-
+	case 'ADD_RANDOM_COLOR':
 	    newIndex = state.colors.length === 0 ? 0 : state.currentIndex;
 
             return Object.assign({}, state, {
@@ -54,18 +46,18 @@ let mainPalette = (state = initialPaletteState, action) => {
         
 
         case 'UPDATE_ACTIVE_COLOR':
-            return Object.assign({}, state, {
-                activeColor: action.color,
-            });
-
-	case 'UPDATE_COLOR_FOR_ACTIVE_INDEX':
 	    let newColorArray = [...state.colors];
-
 	    newColorArray[state.currentIndex] = state.activeColor;
 
             return Object.assign({}, state, {
-                colors: newColorArray,
+		colors: newColorArray,
+                activeColor: action.color,
             });
+
+	case 'UPDATE_ACTIVE_TITLE':
+	    return Object.assign({}, state, {
+	    	activeTitle: action.title,
+	    });
 
         default:
             return state;

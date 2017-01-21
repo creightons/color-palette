@@ -1,28 +1,27 @@
 import { connect } from 'react-redux';
 import {
-    addColor,
     addRandomColor,
     removeColor,
     updateActiveColor,
-    updateColor,
+    updateTitle,
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
 const mapStateToProps = (state) => {
     return {
         activeColor: state.mainPalette.activeColor,
+	activeTitle: state.mainPalette.activeTitle,
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addColor: (color) => { dispatch( addColor(color) ); },
         addRandomColor: (color) => { dispatch( addRandomColor() ); },
         removeColor: () => { dispatch( removeColor() ); },
         updateActiveColor: (color) => {
             dispatch( updateActiveColor(color) );
         },
-	updateColor: () => { dispatch( updateColor() ); },
+	updateTitle: (title) => { dispatch(updateTitle(title)); },
     };
 }
 

@@ -17,32 +17,28 @@ export default (props) => {
     const handleAddRandom = () => {
         props.addRandomColor();
     };
-    const handleUpdateColor = () => {
-	props.updateColor();
-    };
-
+    
     return (
         <aside id='sidebar'>
                 <Header />
                 <div className='sidebar-menu'>
-                        <TitleBox />
-                        <div
-                            className='button'
-                            onClick={handleAdd}
-                        >
-                            Add Color
-                        </div>
-                        <div
-                            className='button'
-                            onClick={handleAddRandom}
-                        >
-                            Add Random Color
-                        </div>
-                        <div
-                            className='button'
-                            onClick={handleRemove}
-                        >
-                            Remove Color
+                        <TitleBox 
+				activeTitle={props.activeTitle}
+				updateTitle={props.updateTitle}
+			/>
+			<div className='controls'>
+				<div
+				    className='button'
+				    onClick={handleAddRandom}
+				>
+				    Add Color
+				</div>
+				<div
+				    className='button'
+				    onClick={handleRemove}
+				>
+				    Remove Color
+				</div>
                         </div>
 
                         <div id='color-picker'>
@@ -50,12 +46,6 @@ export default (props) => {
                                     activeColor={props.activeColor}
                                     updateActiveColor={props.updateActiveColor}
                                 />
-                        </div>
-                        <div
-                                className='button'
-                                onClick={ handleUpdateColor }
-                        >
-                                Update Selected Color
                         </div>
 		</div>
         </aside>

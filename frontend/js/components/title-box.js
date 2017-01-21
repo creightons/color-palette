@@ -5,7 +5,7 @@ export default class TitleBox extends React.Component {
 		super(props);
 		this.state = {
 			editable: false,
-			value: '',
+			value: this.props.activeTitle,
 		};
 		
 		this.handleClick = this.handleClick.bind(this);
@@ -19,6 +19,7 @@ export default class TitleBox extends React.Component {
 
 	handleBlur() {
 		this.setState({ editable: false });
+		this.props.updateTitle(this.state.value);
 	};
 
 	handleChange(event) {
@@ -46,7 +47,7 @@ export default class TitleBox extends React.Component {
 
 		return (
                     <div>
-                        <div className='palette-name'>name</div>
+                        <div className='palette-name'>title</div>
 			{component}
                     </div>
 		);

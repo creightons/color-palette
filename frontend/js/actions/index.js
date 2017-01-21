@@ -1,17 +1,10 @@
 import { getRandomColor } from '../utils';
 
-export function addColor(color) {
-    return {
-        type: 'ADD_COLOR',
-        color,
-    }
-};
-
 export function addRandomColor() {
     return {
         type: 'ADD_RANDOM_COLOR',
         color: getRandomColor(),
-    }
+    };
 };
 
 export function removeColor() {
@@ -34,8 +27,10 @@ export function updateActiveColor(color) {
     };
 };
 
-export function updateColor() {
+
+export function updateTitle(title) {
     return {
-        type: 'UPDATE_COLOR_FOR_ACTIVE_INDEX',
+        type: 'UPDATE_ACTIVE_TITLE',
+        title: title,
     };
 };
