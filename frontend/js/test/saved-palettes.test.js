@@ -12,10 +12,21 @@ describe('Saved Palettes Reducer', function() {
 		});
 	});
 	
-	// The same action is triggered reducer is triggered for both
-	// Fetch and Create; in the case of Fetch, the palettes array
-	// is empty, so you're just coming an empty array with its new
-	// contents
+
+	it.only('should commit the palettes to the store when they are fetched', function() {
+		let palettes = [{
+				_id: '123',
+				title: 'test',
+				colors: [ 'color1', 'color2' ],
+			}],
+			newState =  reducer(undefined, {
+				type: 'FETCH_SUCCESS',
+				palettes,
+			});
+			
+		assert.deepEqual(newState.palettes, palettes);
+	});
+			
 	it('should store data when a palette is saved', function() {
 		let newPalette = {
 				_id: '123',

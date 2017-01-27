@@ -1,14 +1,23 @@
 import React from 'react';
 
 export default (props) => {
-  return (
-    <header>
-      <div id='logo'>Color Palette</div>
-      <ul id='options'>
-        <li>New</li>
-        <li>Save</li>
-        <li>Palettes</li>
-      </ul>
-    </header>
-  );
+	const saveHandler = () => {
+		if (props.activeId !== null) {
+			props.updatePalette();
+		}
+		else {
+			props.createPalette();
+		}
+	};
+	
+	return (
+		<header>
+			<div id='logo'>Color Palette</div>
+			<ul id='options'>
+				<li>New</li>
+				<li onClick={saveHandler}>Save</li>
+				<li>Palettes</li>
+			</ul>
+		</header>
+	);
 };

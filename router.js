@@ -17,6 +17,7 @@ module.exports = function(app) {
 		res.status(200).render('index');
 	});
 
-	app.use('/api', jsonParser);
+	app.use(jsonParser);
+	
 	app.use('/api/palette', require('./api/palette.routes'));
 };

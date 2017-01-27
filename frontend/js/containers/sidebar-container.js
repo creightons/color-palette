@@ -4,13 +4,16 @@ import {
     removeColor,
     updateActiveColor,
     updateTitle,
+	createNewPalette,
+	updateCurrentPalette,
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
 const mapStateToProps = (state) => {
     return {
         activeColor: state.mainPalette.activeColor,
-	activeTitle: state.mainPalette.activeTitle,
+		activeTitle: state.mainPalette.activeTitle,
+		activeId: state.mainPalette.activeId,
     };
 }
 
@@ -21,7 +24,9 @@ const mapDispatchToProps = (dispatch) => {
         updateActiveColor: (color) => {
             dispatch( updateActiveColor(color) );
         },
-	updateTitle: (title) => { dispatch(updateTitle(title)); },
+		updateTitle: (title) => { dispatch(updateTitle(title)); },
+		updatePalette: () => { dispatch( updateCurrentPalette() ); },
+		createPalette: () => { dispatch( createNewPalette() ); },
     };
 }
 

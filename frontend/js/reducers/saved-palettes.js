@@ -21,6 +21,12 @@ let savedPalettes = (state = initialState, action) => {
 			});
 
 		case 'FETCH_SUCCESS':
+			return Object.assign({}, state, {
+				palettes: action.palettes,
+				loading: false,
+				error: false,
+			});
+			
 		case 'CREATE_SUCCESS':
 			return Object.assign({}, state, {
 				palettes: [

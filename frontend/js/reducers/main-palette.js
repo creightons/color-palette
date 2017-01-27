@@ -3,6 +3,7 @@ import { getRandomColor } from '../utils';
 let initialColor = getRandomColor();
 
 let initialPaletteState = {
+  activeId: null,
   colors: [initialColor],
   currentIndex: 0,
   activeColor: initialColor,
@@ -54,13 +55,18 @@ let mainPalette = (state = initialPaletteState, action) => {
                 activeColor: action.color,
             });
 
-	case 'UPDATE_ACTIVE_TITLE':
-	    return Object.assign({}, state, {
-	    	activeTitle: action.title,
-	    });
+		case 'UPDATE_ACTIVE_TITLE':
+			return Object.assign({}, state, {
+				activeTitle: action.title,
+			});
 
-        default:
-            return state;
+		case 'CREATE_SUCCESS':
+			return Object.assign({}, state, {
+				activeId: action.newPalette.id,
+			});
+			
+		default:
+			return state;
     }
 };
 

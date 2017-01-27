@@ -7,6 +7,10 @@ export default class App extends React.Component {
     super(props);
   };
   
+  componentWillMount() {
+	this.props.fetchSavedPalettes();
+  }
+  
   render() {
     return (
       <div>

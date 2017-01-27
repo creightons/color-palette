@@ -20,7 +20,11 @@ export default (props) => {
     
     return (
         <aside id='sidebar'>
-                <Header />
+                <Header
+					activeId={props.activeId}
+					updatePalette={props.updatePalette}
+					createPalette={props.createPalette}
+				/>
                 <div className='sidebar-menu'>
                         <TitleBox 
 				activeTitle={props.activeTitle}
