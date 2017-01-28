@@ -10,14 +10,30 @@ export default (props) => {
 		}
 	};
 	
-	return (
-		<header>
-			<div id='logo'>Color Palette</div>
+	let options;
+	if (props.activePage === 'PALETTE_PAGE') {
+		options = (
 			<ul id='options'>
 				<li onClick={props.newPalette} >New</li>
 				<li onClick={saveHandler} >Save</li>
 				<li onClick={props.loadSavedPage} >Palettes</li>
 			</ul>
+		);
+	}
+	else {
+		options = (
+			<ul id='options'>
+				<li onClick={props.loadPalettePage}>
+					Back
+				</li>
+			</ul>
+		);
+	}
+	
+	return (
+		<header>
+			<div id='logo'>Color Palette</div>
+			{options}
 		</header>
 	);
 };

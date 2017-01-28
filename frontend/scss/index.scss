@@ -105,13 +105,20 @@ $sidebar-bottom-margin: 20px;
   background-color: $sidebar-primary;
   position: fixed;
   top: 0;
-  left: calc(100% -  #{$sidebar-width} );
+  //left: calc(100% -  #{$sidebar-width} );
+  width: $sidebar-width;
   right: 0;
   bottom: 0;
   box-shadow: -8px 0px 11px -2px rgba(0,0,0,0.75);
 
   .sidebar-menu {
       padding: $sidebar-bottom-margin 10px 0;
+  }
+  
+  transition: width .3s;
+  
+  &.expand {
+	width: 100%;
   }
 }
 

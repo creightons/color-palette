@@ -24,7 +24,7 @@ export function fetchSavedPalettes() {
 		return fetch('/api/palette').then(
 			res => res.json()
 		).then(
-			json => dispatch( fetchSuccess(palettes) )
+			json => dispatch( fetchSuccess(json) )
 		).catch(
 			err => dispatch( fetchFailure() )
 		);
