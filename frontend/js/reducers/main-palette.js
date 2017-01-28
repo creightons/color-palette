@@ -12,7 +12,7 @@ let initialPaletteState = {
 
 let newIndex;
 
-let mainPalette = (state = initialPaletteState, action) => {
+const mainPalette = (state = initialPaletteState, action) => {
     switch (action.type) {
 
 	case 'ADD_RANDOM_COLOR':

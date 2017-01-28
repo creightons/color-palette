@@ -41,3 +41,11 @@ export function newPalette() {
 		color: getRandomColor(),
 	};
 }
+
+export function loadPalettePage() {
+	return { type: 'LOAD_PALETTE_PAGE' };
+}
+
+export function loadSavedPage() {
+	return { type: 'LOAD_SAVED_PAGE' };
+}

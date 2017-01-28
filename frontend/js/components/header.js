@@ -16,7 +16,7 @@ export default (props) => {
 			<ul id='options'>
 				<li onClick={props.newPalette} >New</li>
 				<li onClick={saveHandler} >Save</li>
-				<li>Palettes</li>
+				<li onClick={props.loadSavedPage} >Palettes</li>
 			</ul>
 		</header>
 	);

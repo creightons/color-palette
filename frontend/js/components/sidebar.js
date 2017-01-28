@@ -25,6 +25,7 @@ export default (props) => {
 					updatePalette={props.updatePalette}
 					saveNewPalette={props.saveNewPalette}
 					newPalette={props.newPalette}
+					loadSavedPage={props.loadSavedPage}
 				/>
                 <div className='sidebar-menu'>
                         <TitleBox 

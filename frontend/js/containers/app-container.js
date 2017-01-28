@@ -4,7 +4,7 @@ import { fetchSavedPalettes } from '../actions';
 
 const mapStateToProps = (state) => {
 	return {
-			palettes: state.savedPalettes.palettes,
+		activePage: state.pageNav.activePage,
 	};
 };
 

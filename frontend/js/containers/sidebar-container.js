@@ -7,6 +7,7 @@ import {
 	saveNewPalette,
 	updateCurrentPalette,
 	newPalette,
+	loadSavedPage,
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
@@ -29,6 +30,7 @@ const mapDispatchToProps = (dispatch) => {
 		updatePalette: () => { dispatch( updateCurrentPalette() ); },
 		saveNewPalette: () => { dispatch( saveNewPalette() ); },
 		newPalette: () => { dispatch( newPalette() ); },
+		loadSavedPage: () => { dispatch( loadSavedPage() ); },
     };
 }
 
