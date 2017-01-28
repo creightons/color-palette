@@ -6,7 +6,7 @@ export default (props) => {
 			props.updatePalette();
 		}
 		else {
-			props.createPalette();
+			props.saveNewPalette();
 		}
 	};
 	
@@ -14,8 +14,8 @@ export default (props) => {
 		<header>
 			<div id='logo'>Color Palette</div>
 			<ul id='options'>
-				<li>New</li>
-				<li onClick={saveHandler}>Save</li>
+				<li onClick={props.newPalette} >New</li>
+				<li onClick={saveHandler} >Save</li>
 				<li>Palettes</li>
 			</ul>
 		</header>

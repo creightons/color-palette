@@ -5,9 +5,8 @@ export default class TitleBox extends React.Component {
 		super(props);
 		this.state = {
 			editable: false,
-			value: this.props.activeTitle,
 		};
-		
+
 		this.handleClick = this.handleClick.bind(this);
 		this.handleBlur = this.handleBlur.bind(this);
 		this.handleChange = this.handleChange.bind(this);
@@ -19,19 +18,20 @@ export default class TitleBox extends React.Component {
 
 	handleBlur() {
 		this.setState({ editable: false });
-		this.props.updateTitle(this.state.value);
 	};
 
 	handleChange(event) {
-		this.setState({ value: event.target.value });
+		this.props.updateTitle(event.target.value);
 	};
 
 	render() {
-		let component;
+		let component,
+			value = this.props.activeTitle;
+			
 		if (this.state.editable) {
 			component = (
 				<TitleInput
-					value={this.state.value}
+					value={value}
 					handleChange={this.handleChange}
 					handleBlur={this.handleBlur}
 				/>
@@ -40,16 +40,16 @@ export default class TitleBox extends React.Component {
 		else {
 			component = (
 				<div className='title uneditable' onClick={this.handleClick}>
-					{this.state.value}
+					{value}
 				</div>
 			);
 		}
 
 		return (
-                    <div>
-                        <div className='palette-name'>title</div>
-			{component}
-                    </div>
+			<div>
+				<div className='palette-name'>title</div>
+				{component}
+			</div>
 		);
 	};
 };

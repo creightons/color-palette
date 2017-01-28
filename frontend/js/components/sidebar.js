@@ -23,7 +23,8 @@ export default (props) => {
                 <Header
 					activeId={props.activeId}
 					updatePalette={props.updatePalette}
-					createPalette={props.createPalette}
+					saveNewPalette={props.saveNewPalette}
+					newPalette={props.newPalette}
 				/>
                 <div className='sidebar-menu'>
                         <TitleBox 

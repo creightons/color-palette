@@ -30,7 +30,7 @@ let mainPalette = (state = initialPaletteState, action) => {
 
             // Remove the element at the end of the array
             shortenedColorArray.splice( state.currentIndex, 1);
-
+33
 	    newIndex = state.currentIndex >= shortenedColorArray.length
 		? shortenedColorArray.length - 1
 		: state.currentIndex;
@@ -64,7 +64,15 @@ let mainPalette = (state = initialPaletteState, action) => {
 			return Object.assign({}, state, {
 				activeId: action.newPalette.id,
 			});
-			
+		
+		case 'NEW_PALETTE':
+			return Object.assign({}, state, {
+				activeId: null,
+				colors: [action.color],
+				currentIndex: 0,
+				activeTitle: '',
+				activeColor: action.color,
+			});
 		default:
 			return state;
     }

@@ -4,8 +4,9 @@ import {
     removeColor,
     updateActiveColor,
     updateTitle,
-	createNewPalette,
+	saveNewPalette,
 	updateCurrentPalette,
+	newPalette,
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
@@ -26,7 +27,8 @@ const mapDispatchToProps = (dispatch) => {
         },
 		updateTitle: (title) => { dispatch(updateTitle(title)); },
 		updatePalette: () => { dispatch( updateCurrentPalette() ); },
-		createPalette: () => { dispatch( createNewPalette() ); },
+		saveNewPalette: () => { dispatch( saveNewPalette() ); },
+		newPalette: () => { dispatch( newPalette() ); },
     };
 }
 

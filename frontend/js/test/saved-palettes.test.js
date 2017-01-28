@@ -13,7 +13,7 @@ describe('Saved Palettes Reducer', function() {
 	});
 	
 
-	it.only('should commit the palettes to the store when they are fetched', function() {
+	it('should commit the palettes to the store when they are fetched', function() {
 		let palettes = [{
 				_id: '123',
 				title: 'test',

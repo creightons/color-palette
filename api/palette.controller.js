@@ -33,7 +33,7 @@ function update(req, res, next) {
 	let id = req.params.id,
 		colors = req.body.colors,
 		title = req.body.title;
-	console.log('body = ', req.body);
+
 	Palette.findByIdAsync(id).then(palette => {
 		palette.title = title;
 		palette.colors = colors;
