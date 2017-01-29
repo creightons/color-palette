@@ -40,7 +40,7 @@ export default class SavedScreen extends React.Component {
 
 const MiniPalette = (props) => {
 	return (
-		<div className='mini-panel'>
+		<div key={props.id} className='mini-palette'>
 			<div className='title'>
 				{props.title}
 			</div>
