@@ -9,7 +9,8 @@ import {
 	newPalette,
 	loadSavedPage,
 	loadPalettePage,
-	fetchSavedPalettes
+	fetchSavedPalettes,
+	loadSavedPalette,
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
@@ -38,6 +39,7 @@ const mapDispatchToProps = (dispatch) => {
 		newPalette: () => { dispatch( newPalette() ); },
 		loadSavedPage: () => { dispatch( loadSavedPage() ); },
 		loadPalettePage: () => { dispatch( loadPalettePage() ); },
+		loadSavedPalette: (palette) => { dispatch( loadSavedPalette(palette) ); },
     };
 }
 

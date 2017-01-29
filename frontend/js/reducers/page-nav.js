@@ -4,6 +4,7 @@ let initialState = {
 
 const pageNav = (state = initialState, action) => {
 	switch(action.type) {
+		case 'LOAD_SAVED_PALETTE':
 		case 'LOAD_PALETTE_PAGE':
 			return Object.assign({}, state, {
 				activePage: 'PALETTE_PAGE',

@@ -49,3 +49,11 @@ export function loadPalettePage() {
 export function loadSavedPage() {
 	return { type: 'LOAD_SAVED_PAGE' };
 }
+
+// A palette is an object containing an ID, Colors array, and Title
+export function loadSavedPalette(palette) {
+	return {
+		type: 'LOAD_SAVED_PALETTE',
+		palette,
+	};
+}

@@ -24,9 +24,10 @@ export default class SavedScreen extends React.Component {
 						return (
 							<MiniPalette
 								colors={palette.colors}
-								id={palette.id}
+								id={palette._id}
 								title={palette.title}
 								key={palette.id}
+								loadSavedPalette={this.props.loadSavedPalette}
 							/>
 						);
 					})}
@@ -39,8 +40,22 @@ export default class SavedScreen extends React.Component {
 };
 
 const MiniPalette = (props) => {
+	const clickHandler = () => {
+		let palette = {
+			colors: props.colors,
+			id: props.id,
+			title: props.title,
+		};
+		
+		props.loadSavedPalette(palette);
+	};
+	
 	return (
-		<div key={props.id} className='mini-palette'>
+		<div
+			key={props.id}
+			className='mini-palette'
+			onClick={clickHandler}
+		>
 			<div className='title'>
 				{props.title}
 			</div>

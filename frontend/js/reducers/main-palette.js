@@ -73,6 +73,16 @@ const mainPalette = (state = initialPaletteState, action) => {
 				activeTitle: '',
 				activeColor: action.color,
 			});
+			
+		case 'LOAD_SAVED_PALETTE':
+			return Object.assign({}, state, {
+				activeId: action.palette.id,
+				colors: [...action.palette.colors],
+				activeTitle: action.palette.title,
+				currentIndex: 0,
+				activeColor: action.palette.colors[0] || '#fff',
+			});
+
 		default:
 			return state;
     }

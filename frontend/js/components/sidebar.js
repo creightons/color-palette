@@ -45,6 +45,7 @@ export default (props) => {
 				fetchSavedPalettes={props.fetchSavedPalettes}
 				palettes={props.palettes}
 				loading={props.loading}
+				loadSavedPalette={props.loadSavedPalette}
 			/>
 		);
 	}
