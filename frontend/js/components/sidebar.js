@@ -56,8 +56,18 @@ export default (props) => {
 		classes.push('expand')
 	}
 	
+	let loadingScreen;
+	if (props.loading) {
+		loadingScreen = (
+			<div className='loading-overlay'>
+				<div className='spinner' />
+			</div>
+		);
+	};
+	
 	return (
 		<aside id='sidebar' className={classes.join(' ')} >
+			{loadingScreen}
 			<Header
 				activeId={props.activeId}
 				updatePalette={props.updatePalette}
