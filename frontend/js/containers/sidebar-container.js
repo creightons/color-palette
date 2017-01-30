@@ -11,6 +11,7 @@ import {
 	loadPalettePage,
 	fetchSavedPalettes,
 	loadSavedPalette,
+	deletePalette
 } from '../actions';
 import Sidebar from '../components/sidebar';
 
@@ -40,6 +41,7 @@ const mapDispatchToProps = (dispatch) => {
 		loadSavedPage: () => { dispatch( loadSavedPage() ); },
 		loadPalettePage: () => { dispatch( loadPalettePage() ); },
 		loadSavedPalette: (palette) => { dispatch( loadSavedPalette(palette) ); },
+		deletePalette: (id) => { dispatch( deletePalette(id) ); },
     };
 }
 

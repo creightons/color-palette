@@ -121,3 +121,36 @@ export function updateCurrentPalette() {
 		);
 	};
 }
+
+function destroyPalette() {
+	return {
+		type: 'DESTROY',
+	};
+}
+
+function destroySuccess(id) {
+	return {
+		type: 'DESTROY_SUCCESS',
+		id,
+	};
+}
+
+function destroyFailure() {
+	return {
+		type: 'DESTROY_FAILURE',
+	}
+}
+
+export function deletePalette(id) {
+	return (dispatch, getState) => {
+		dispatch( destroyPalette() );
+			
+		fetch(`/api/palette/${id}`, {
+			method: 'DELETE',
+		}).then(
+			() => dispatch( destroySuccess(id) )
+		).catch(
+			err => dispatch( destroyFailure() )
+		);
+	};
+}

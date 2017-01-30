@@ -28,6 +28,7 @@ export default class SavedScreen extends React.Component {
 								title={palette.title}
 								key={palette.id}
 								loadSavedPalette={this.props.loadSavedPalette}
+								deletePalette={this.props.deletePalette}
 							/>
 						);
 					})}
@@ -50,6 +51,11 @@ const MiniPalette = (props) => {
 		props.loadSavedPalette(palette);
 	};
 	
+	const handleDelete = (e) => {
+		e.stopPropagation();
+		props.deletePalette(props.id);
+	};
+	
 	return (
 		<div
 			key={props.id}
@@ -59,6 +65,10 @@ const MiniPalette = (props) => {
 			<div className='title'>
 				{props.title}
 			</div>
+			<div
+				onClick={handleDelete}
+				className='delete-icon'
+			/>
 			<div className='colors'>
 				{props.colors.map((color, index) => {
 					return (

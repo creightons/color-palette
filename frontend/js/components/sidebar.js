@@ -46,6 +46,7 @@ export default (props) => {
 				palettes={props.palettes}
 				loading={props.loading}
 				loadSavedPalette={props.loadSavedPalette}
+				deletePalette={props.deletePalette}
 			/>
 		);
 	}

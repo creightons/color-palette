@@ -61,10 +61,10 @@ let savedPalettes = (state = initialState, action) => {
 			});
 		
 		case 'DESTROY_SUCCESS':
-			changedPalettes = [...state.palettes];
+			changedPalettes = JSON.parse(JSON.stringify(state.palettes));
 
 			index = changedPalettes.findIndex(
-				palette => palette.id === action.id
+				palette => palette._id === action.id
 			);
 
 			changedPalettes.splice(index, 1);
